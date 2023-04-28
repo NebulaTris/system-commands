@@ -1,5 +1,5 @@
 # System Commands:sparkles:
-This repository contains weekly notes till week 7 in the notes folder in markdown and solutions of all NPPE written in shell.
+This repository contains weekly notes till week 7 in the notes folder , GRPA and NPPE solutions
 
 # Notes
 The notes folder contains weekly notes till week 7 in markdown format. Each week's notes are stored in a separate file with the name WeekX.md, where X represents the week number.
