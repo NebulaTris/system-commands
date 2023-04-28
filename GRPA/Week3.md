@@ -1,68 +1,63 @@
 # GRPA 1
-We created some directories and change our current working directory using the cd command as given by the sequence of commands below. Write a bash command to make the directory "level2" as your current working directory. i.e. after executing your solution, if we execute the command "pwd" it should return the path of the directory "level2".</br>
-Write your solution as a single line bash command.</br>
-
-cd /</br>
-mkdir level1</br>
-cd level1</br>
-mkdir level2</br>
-cd level2</br>
-mkdir level3</br>
-cd ..</br>
-cd ..</br>
-
+Add the string “EOF alpha” at the end of the file(starting at a new line) alpha.txt then append the contents of the file numbers.txt at the end of the file(starting at a new line) alpha.txt. alpha.txt and numbers.txt are located in the current working directory.
 ## Solution
 ```shell
 script() {
-cd /level1/level2
-pwd
+echo "EOF alpha" >> alpha.txt; cat numbers.txt >> alpha.txt
 }
 ```
 # GRPA 2
-We have a file named "systemcommands.txt" in the present working directory. Write a Bash command to change its permissions to</br>
-
-user: read, write, execute</br>
-group: execute</br>
-others: write</br>
-## Solution
-```shell
-script() {
-chmod 712 systemcommands.txt
-}
-```
-# GRPA 3
-We want to change the file permissions of "someFile.txt" file as follows.</br>
-
-user: execute</br>
-group: execute, read</br>
-others: write</br>
-We will use the command chmod XXX someFile.txt where XXX represents a 3 digit number used to set the above permissions. Write a bash command to create a file named XXX.digits in the current working directory such XXX is the same three digit number used to set the permissions as mentioned above. The file your command creates can be empty.
-For e.g. If your think the command chmod 111 someFile.txt will change the permission of file someFile.txt as mentioned above, then your solution should create a file named 111.digits in the current working directory.
+Print the number of lines present in ‘file1’ and ‘file2’ combined, your solution should not print anything else. ‘file1’ and ‘file2’ are located in the current working directory.</br>
+Hint: Multiple files can be given as argument to ‘cat’ command.
 ## Solution
 ```shell
 script() { 
-touch 152.digits
+cat file1 file2 | wc -l
+
+# Solution 2
+# cat file2 >> file1; wc -l file1
+
+# Solution 3
+# cat file2 >> file1; cat file1 | wc -l
+}
+```
+# GRPA 3
+There are three files master.txt, half1.txt and half2.txt in the current working directory. Add first 2 lines of half1.txt to the file master.txt at the end(starting at a new line) then append the last 3 lines of the file half2.txt to the file master.txt at the end(starting at a new line). Append the lines in the sequence mentioned.
+## Solution
+```shell
+script() { 
+head half1.txt -n2 >> master.txt
+tail half2.txt -n3 >> master.txt
 }
 ```
 # GRPA 4
-Create two folders named dir1 and dir2 in the current working directory.
-Try to write a single line bash command to perform the above task.
+An observer wrote a script named createTwingle that produces a file twingle containing names of all the visible stars present in the sky at that instant. Every line in the file twingle is the name of a star. In your current directory the file twingle may or may not be present.
+If the file twingle is present in the directory then print the number of lines in the file, else execute the command createTwingle it will create the file twingle in the current working directory then print the number of lines in the file twingle.</br>
+Hint: Try to use operators discussed in the lectures to give a single line solution for the task.</br>
+Note: stderr will not be displayed
 ## Solution
 ```shell
-script() {
-mkdir dir1 dir2
+script() { 
+wc -l twingle || (createTwingle && wc -l twingle)
 }
 ```
 # GRPA 5
-Write two commands one on each line for the following two tasks.</br>
-
-Move only the file file_1 present in dir_1 to the empty directory dir_2.</br>
-Delete the directory dir_1.</br>
-dir_1 and dir_2 are directories in the current working directory. The operation should not change your current working directory.
+Print the number of directories in the current working directory. Do not print anything else.</br>
+Hint: One solution is to make use of 'ls', 'wc' and pipes('|').
 ## Solution
 ```shell
-script() {
-mv dir_1/file_1 dir_2
-rm -rf dir_1
+script() { 
+ls -d */ | wc -l
+}
+```
+# GRPA 6
+The script test will print some text to the standard output, it can be run similar to any other command and does not accept any arguments.</br>
+Your task is to print the output after running test on the screen and also append the output at the end(starting at new line) of the file log.  File log is located in the current working directory.</br>
+Hint: To solve it in one line check the man page of tee command for appending to the file. 
+## Solution
+```shell
+script() { 
+test | tee templog
+cat templog >> log
 }
 ```
