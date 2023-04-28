@@ -4,6 +4,9 @@ This repository contains weekly notes till week 7 in the notes folder in markdow
 # Notes
 The notes folder contains weekly notes till week 7 in markdown format. Each week's notes are stored in a separate file with the name WeekX.md, where X represents the week number.
 
+# GRPA Solutions
+The solutions to all the GRPAs can be found in the GRPA folder, organized by week number.
+
 # NPPE Solutions
 The NPPE folder contains solutions of all NPPE written in shell. Each solution is stored in a separate file with the name ProblemX.sh, where X represents the problem number.
 
