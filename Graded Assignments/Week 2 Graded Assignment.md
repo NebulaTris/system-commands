@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# System COmmands Week 2
+# System Commands Week 2
 ## Graded Assignment
 ## Problem 1
 
