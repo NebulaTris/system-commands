@@ -1,4 +1,4 @@
-# System Commands:sparkles:
+# System Commands :sparkles:
 This repository contains weekly notes till week 7 in the notes folder , GRPA and NPPE solutions
 
 # Notes
