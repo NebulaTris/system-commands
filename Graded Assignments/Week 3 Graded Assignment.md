@@ -222,3 +222,95 @@ Which of the following is the correct syntax to store the output of the command 
 (3) ``` dirs=`ls` ```
 
 (4) ``` dirs=$(ls) ```
+
+## Additional Questions 
+
+### **Question 1:**
+**What does the following command do?**
+
+```bash
+tr 'foo' 'bar' < file.txt > temp && mv temp file.txt
+
+```
+
+#### **Options:**
+
+-   A) Replaces all occurrences of the string "foo" with "bar" in file.txt
+    
+-   B) Replaces each occurrence of the character `f` with `b`, and each `o` with `a` or `r` in file.txt
+    
+-   C) Reads the contents of file.txt, modifies it, and overwrites file.txt with the result
+    
+-   D) Uses tr to translate entire words from "foo" to "bar"
+    
+
+#### ✅ **Final Answer:**
+
+**B) Replaces each occurrence of the character `f` with `b`, and each `o` with `a` or `r` in file.txt**
+
+----------
+
+### **Question 2:**
+
+**Which of the following commands provide a visual representation or tree structure showing the parent-child relationship between processes in Linux?**
+
+#### **Options:**
+
+-   A) `pstree`
+    
+-   B) `ps -ejH`
+    
+-   C) `ps --forest`
+    
+-   D) `ps auxf`
+    
+
+#### ✅ **Final Answer:**
+
+All of the above:  
+**A, B, C, and D** — All show process hierarchies in a tree or visual format.
+
+----------
+
+### **Question 3:**
+
+**On running the following command in the bash shell:**
+
+```bash
+echo "Random Text" | tee file1 | tee file2
+
+```
+
+**"Random Text" will be redirected to?**
+
+#### **Options:**
+
+-   A) The file `file1` only
+    
+-   B) The file `file1`, and the terminal
+    
+-   C) The file `file1`, file `file2` and the terminal
+    
+-   D) The file `file1` and the terminal
+    
+
+#### ✅ **Final Answer:**
+
+**C) The file `file1`, file `file2` and the terminal**
+
+----------
+
+### **Question 4:**
+
+**How many directories will be created by the command:**
+
+```bash
+mkdir dir-{0..9} && mkdir dir-100 || mkdir dir-101
+
+```
+
+#### ✅ **Final Answer:**
+
+**11 directories** — `dir-0` to `dir-9` and `dir-100` (assuming none of them already exist).
+
+----------
